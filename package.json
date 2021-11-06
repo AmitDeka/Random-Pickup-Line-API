@@ -1,0 +1,22 @@
+{
+  "name": "randompickuplineapi",
+  "version": "1.0.0",
+  "description": "Random Pickup line Generator API build using NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "keywords": [
+    "Random",
+    "PickupLine",
+    "NodeJs"
+  ],
+  "author": "amit deka",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
