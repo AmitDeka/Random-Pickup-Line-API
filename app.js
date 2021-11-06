@@ -6,7 +6,7 @@ const funny = require('./funnylines.json')
 const cute = require('./cutelines.json')
 const chessy = require('./cheesylines.json')
 const bestatbar = require('./bestlinesatbar.json')
-const port = 3000
+const port = 9009
 
 app.use(express.static(path.join(__dirname,'./public')))
 
