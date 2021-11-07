@@ -6,7 +6,7 @@ const funny = require('./funnylines.json')
 const cute = require('./cutelines.json')
 const chessy = require('./cheesylines.json')
 const bestatbar = require('./bestlinesatbar.json')
-const port = 9009
+const port = 9090
 
 app.use(express.static(path.join(__dirname,'./public')))
 
@@ -15,54 +15,57 @@ app.get('/', (req, res) => {
 })
 
 // best 
-app.get('/bestLinesList', (req, res) => {
-    res.send({'bestLinesList': best })
+app.get('/best', (req, res) => {
+    res.send({'best': best })
 })
 
-app.get('/bestLinesList/random',(req, res) =>{
+app.get('/best/random',(req, res) =>{
     const random = Math.floor(Math.random() * 19);
     const bestLine = best[random];
     res.send(bestLine);
 })
 
 //funny
-app.get('/funnyLinesList', (req, res) => {
-    res.send({'funnyLinesList': funny })
+app.get('/funny', (req, res) => {
+    res.send({'funny': funny })
 })
 
-app.get('/funnyLinesList/random',(req, res) =>{
+app.get('/funny/random',(req, res) =>{
     const random = Math.floor(Math.random() * 19);
     const funnyLine = funny[random];
     res.send(funnyLine);
 })
 
-app.get('/bestLinesList', (req, res) => {
-    res.send({'bestLinesList': best })
+// cute
+app.get('/cute', (req, res) => {
+    res.send({'cute': cute })
 })
 
-app.get('/bestLinesList/random',(req, res) =>{
+app.get('/cute/random',(req, res) =>{
     const random = Math.floor(Math.random() * 19);
-    const bestLine = best[random];
+    const bestLine = cute[random];
     res.send(bestLine);
 })
 
-app.get('/bestLinesList', (req, res) => {
-    res.send({'bestLinesList': best })
+// chessy
+app.get('/chessy', (req, res) => {
+    res.send({'chessy': chessy })
 })
 
-app.get('/bestLinesList/random',(req, res) =>{
+app.get('/chessy/random',(req, res) =>{
     const random = Math.floor(Math.random() * 19);
-    const bestLine = best[random];
+    const bestLine = chessy[random];
     res.send(bestLine);
 })
 
-app.get('/bestLinesList', (req, res) => {
-    res.send({'bestLinesList': best })
+// bestatbar
+app.get('/bestatbar', (req, res) => {
+    res.send({'bestatbar': bestatbar })
 })
 
-app.get('/bestLinesList/random',(req, res) =>{
-    const random = Math.floor(Math.random() * 19);
-    const bestLine = best[random];
+app.get('/bestatbar/random',(req, res) =>{
+    const random = Math.floor(Math.random() * 20);
+    const bestLine = bestatbar[random];
     res.send(bestLine);
 })
 
