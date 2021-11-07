@@ -1,12 +1,13 @@
 const express = require('express')
 const app = express()
+const port = process.env.PORT || 9090
+
 const path = require('path')
 const best = require('./bestlines.json')
 const funny = require('./funnylines.json')
 const cute = require('./cutelines.json')
 const chessy = require('./cheesylines.json')
 const bestatbar = require('./bestlinesatbar.json')
-const port = 9090
 
 app.use(express.static(path.join(__dirname,'./public')))
 
