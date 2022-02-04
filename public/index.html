@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pickup Lines API</title>
 
-    <link rel="stylesheet" href="./global/global.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./global/global.css" />
+  </head>
+  <body>
     <main>
-        <div class="container">
-            <h1 class="container-title">Best Lines List</h1>
-            <div class="container-list" id="bestList"></div>
-        
-            <h1 class="container-title">Best Lines List</h1>
-            <div class="container-list" id="bestList"></div>
-        </div>
+      <div class="container">
+        <h1 class="container-title">Best Lines List</h1>
+        <div class="container-list" id="bestList"></div>
+      </div>
     </main>
 
-    <!-- <script>
-        fetch('')
-    </script> -->
-</body>
+    <script type="text/javascript">
+      const baseUrl = "https://randompickupline.herokuapp.com";
+
+      async function fetchBestLines() {
+        try {
+          const resp = await fetch(`${baseUrl}/best`);
+          if (!resp.ok) {
+            throw new Error(`Failed to fetch Status Code ${resp.status}`);
+          } else {
+            return resp.json();
+          }
+        } catch (e) {
+          console.log(e);
+        }
+      }
+
+      function jsonList(containerId) {
+        const containerCode = document.getElementById("bestList");
+        // if (!containerCode) {
+        //   return;
+        // }
+        // fetchBestLines().then
+        for (var i = 0; i < containerId.length; i++) {
+          var div = document.createElement("div");
+          div.innerHTML = containerId[i];
+          containerCode.appendChild(div);
+        }
+      }
+    </script>
+  </body>
 </html>
